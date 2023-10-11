@@ -1,6 +1,6 @@
 // import { Menu, Transition } from '@headlessui/react';
 // import { EllipsisHorizontalIcon } from '@heroicons/react/20/solid';
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import NavBar from '@/components/navbar';
 import { Meta } from '@/layouts/Meta';
@@ -47,7 +47,6 @@ const DebtorsDashboard: React.FC<DashboardProps> = ({ accessToken, profile }) =>
   const {
     isLoading: ticketsLoading,
     data: debtorTickets,
-    refetch: refetchTicket,
   } = useQuery(
     ['debtorTickets', accessToken],
     () => getGroupTickets(String(accessToken)),

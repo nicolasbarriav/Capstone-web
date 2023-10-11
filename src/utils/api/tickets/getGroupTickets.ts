@@ -37,7 +37,7 @@ export interface ApiGroupTicket {
 export default async function getGroupTickets(
   accessToken: string | null,
   debtorId?: number | undefined,
-  getTickets?: boolean | undefined
+  _getTickets?: boolean | undefined
 ): Promise<Ticket[]> {
   let url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/ticket/grouped`;
 

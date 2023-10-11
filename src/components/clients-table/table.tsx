@@ -66,7 +66,7 @@ export default function TicketTable({
   const [columnVisibility, setColumnVisibility] =
     React.useState<VisibilityState>({});
   const [rowSelection, setRowSelection] = React.useState({});
-  const [filterColumn, setFilterColumn] = React.useState('Nombre');
+  // const [filterColumn, setFilterColumn] = React.useState('Nombre');
   // START  FILTRO
   const [findCompany, setFindCompany] = React.useState({isCompany : true});
   // const [findPerson, setFindPerson] = React.useState({isPerson : false});

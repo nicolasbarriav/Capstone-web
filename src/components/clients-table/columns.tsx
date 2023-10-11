@@ -1,9 +1,9 @@
-import { CaretSortIcon, DotsHorizontalIcon } from "@radix-ui/react-icons";
+import { CaretSortIcon } from "@radix-ui/react-icons";
 import type { ColumnDef } from "@tanstack/react-table";
-import { MouseEventHandler, useState } from "react";
-import { Bar } from "react-chartjs-2";
+import { useState } from "react";
+// import { Bar } from "react-chartjs-2";
 
-import Popup from "reactjs-popup";
+// import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import CustomPopup from "../ui/popup";
 // import Link from 'next/link';
@@ -19,7 +19,7 @@ import CustomPopup from "../ui/popup";
 // import createTicketState from '@/utils/api/tickets/createTicketState';
 // import deleteTicket from '@/utils/api/tickets/deleteTicket';
 
-import getGroupTickets from "@/utils/api/tickets/getGroupTickets";
+// import getGroupTickets from "@/utils/api/tickets/getGroupTickets";
 
 import type { Ticket } from "@/utils/api/tickets/domain/ticket";
 import type { DebtorStats } from "@/utils/api/debtors/getDebtorsStats";
@@ -31,9 +31,9 @@ import classNames from "@/utils/functions/classNames";
 // import getBankName from '@/utils/functions/getBankName';
 
 import { Button } from "../ui/button";
-import { useQuery } from "react-query";
-import { any } from "zod";
-import TicketTable from "../tickets-table/table";
+// import { useQuery } from "react-query";
+// import { any } from "zod";
+// import TicketTable from "../tickets-table/table";
 
 // const copyToClipboard = (text: string) => {
 //   if (navigator.clipboard) {
@@ -42,9 +42,9 @@ import TicketTable from "../tickets-table/table";
 // };
 
 export const getColumns = (
-  accessToken: string,
-  refetch: () => void,
-  profile: ApiProfile,
+  _accessToken: string,
+  _refetch: () => void,
+  _profile: ApiProfile,
   tickets: Ticket[]
 ): ColumnDef<DebtorStats>[] => [
   {
@@ -230,9 +230,8 @@ export const getColumns = (
       const debtor = row.original;
       let debtorId = debtor.id;
       
-      const details = tickets.filter((ticket) => ticket.debtorId == debtorId);
+      const details = Array.from(tickets).filter((ticket) => ticket.debtorId == debtorId);
 
-      console.log("tickets", tickets);
       const [isPopupOpen, setIsPopupOpen] = useState(false);
       
 
@@ -245,7 +244,7 @@ export const getColumns = (
   {
     id: 'is_company',
     // accessorFn: (row) => row.is_company? `${row.is_company}`: "false",
-    accessorFn: (row) => (Math.random() < 0.5).toString(),
+    accessorFn: () => (Math.random() < 0.5).toString(),
     header: ({ column }) => {
       return (
         <Button
@@ -284,7 +283,7 @@ export const getColumns = (
       const new_date = `${num[1]}/${num[2]}/${num[0]}`;
       const date2 = new Date(new_date);// dia del ticket
       
-      const diffTime = Math.abs(date2 - date);
+      const diffTime = Math.abs(date2.valueOf() - date.valueOf());
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
       return (diffDays < 3)? "true":"false";
     } ,
@@ -344,7 +343,7 @@ export const getColumns = (
   {
     id: 'is_reliable',
     // accessorFn: (row) => row.risk?((row.risk > 50)?"true":"false"): null,
-    accessorFn: (row) => (Math.random() < 0.5).toString(),
+    accessorFn: () => (Math.random() < 0.5).toString(),
     header: ({ column }) => {
       return (
         <Button

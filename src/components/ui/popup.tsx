@@ -1,6 +1,6 @@
 import { DebtorStats } from "@/utils/api/debtors/getDebtorsStats";
 import { Ticket } from "@/utils/api/tickets/domain/ticket";
-import React, { Dispatch, MouseEventHandler, ReactNode, SetStateAction, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 
