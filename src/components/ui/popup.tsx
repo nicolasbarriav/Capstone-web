@@ -20,6 +20,15 @@ const CustomPopup: React.FC<PopupProps> = ({ details, debtor, isOpen, setIsOpen 
   const handleClose = () => {
     setIsOpen(false);
   }
+  
+  // BORRAR ESTO CUANDO TENGAMOS EL RISK EN EL ENDPOINT
+  function getRandomInt(maximo: number) {
+    return Math.floor(Math.random() * maximo + 1);
+  }
+  const risk = getRandomInt(100);
+  // HASTA ACÁ, y DESCOMENTAR LA SIGUIENTE
+  // const risk = debtor.risk;
+
   return (
     <Popup
       trigger={<button>...</button>}
@@ -59,13 +68,14 @@ const CustomPopup: React.FC<PopupProps> = ({ details, debtor, isOpen, setIsOpen 
               <div className="px-1 text-xs text-gray-400"> Riesgo</div>
               <div className="flex flex-row ...">
                 {/* tick - PONER RIESGO CLIENTE */}
-                <div className="rounded-full py-1 px-1 text-center">{debtor.risk}%</div>
-                <div className="py-1 px-1"></div>
+                
+                <div className="rounded-full py-1 px-1 pb-3 text-center">{risk}%</div>
+                <div className="py-1 px-1 "></div>
               </div>
               {/* MOSTRAR TODOS LOS TICKETS */}
               <div className="px-1 text-xs text-gray-400"> Todos los tickets emitidos</div>
-              {details ? details?.map((ticket) => {
-                return <div className="p-1">{ticket.title}: ${ticket.amount} ({ticket.status})</div>;
+              {details ? details.slice(0,3)?.map((ticket) => {
+                return <div className="p-1">{ticket.title}: ${Math.round(ticket.amount)}</div>;
               })
               : ""}
             </div>

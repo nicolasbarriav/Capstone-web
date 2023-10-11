@@ -5,7 +5,7 @@ import { Bar } from "react-chartjs-2";
 
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
-import CustomPopup from "./popup";
+import CustomPopup from "../ui/popup";
 // import Link from 'next/link';
 
 // import {
@@ -57,6 +57,8 @@ export const getColumns = (
         return Math.floor(Math.random() * maximo + 1);
       }
       return debtorRisk ? `${debtorRisk}` : `${getRandomInt(100)}`;
+
+      // Request("http://ec2-44-206-197-206.compute-1.amazonaws.com:3000/api")
     },
     header: ({ column }) => {
       return (
