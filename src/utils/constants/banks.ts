@@ -1,0 +1,18 @@
+export const banks = [
+  { id: 'cl_banco_ripley', name: 'Banco Ripley' },
+  { id: 'cl_banco_bci_360', name: 'Banco Bci 360' },
+  { id: 'cl_banco_bice', name: 'Banco BICE' },
+  { id: 'cl_banco_deutsche', name: 'Banco Deutsche' },
+  { id: 'cl_banco_corpbanca', name: 'Banco Corpbanca' },
+  { id: 'cl_banco_security', name: 'Banco Security' },
+  { id: 'cl_banco_internacional', name: 'Banco Internacional' },
+  { id: 'cl_banco_falabella', name: 'Banco Falabella' },
+  { id: 'cl_banco_estado', name: 'Banco Estado' },
+  { id: 'cl_banco_bci', name: 'Banco BCI' },
+  { id: 'cl_banco_scotiabank', name: 'Banco Scotiabank' },
+  { id: 'cl_banco_itau', name: 'Banco Itau' },
+  { id: 'cl_banco_bbva', name: 'Banco BBVA' },
+  { id: 'cl_banco_santander', name: 'Banco Santander' },
+  { id: 'cl_banco_de_chile', name: 'Banco de Chile' },
+  { id: 'cl_tenpo', name: 'Tenpo' },
+];

@@ -1,0 +1,61 @@
+export default function getPaymentTimingPreference(frecuency: string | number) {
+  if (frecuency === 'weekly') {
+    return [
+      { id: 1, type: 'monday', day: null, name: 'Lunes' },
+      { id: 2, type: 'tuesday', day: null, name: 'Martes' },
+      { id: 3, type: 'wednesday', day: null, name: 'Miércoles' },
+      { id: 4, type: 'thursday', day: null, name: 'Jueves' },
+      { id: 5, type: 'friday', day: null, name: 'Viernes' },
+      { id: 6, type: 'saturday', day: null, name: 'Sábado' },
+    ];
+  }
+  return [
+    { id: 7, type: 'last_day_of_month', day: null, name: 'Último día del mes' },
+    {
+      id: 8,
+      type: 'first_day_of_month',
+      day: null,
+      name: 'Primer día del mes',
+    },
+    {
+      id: 9,
+      type: 'last_working_day_of_month',
+      day: null,
+      name: 'Último día hábil del mes',
+    },
+    {
+      id: 10,
+      type: 'first_working_day_of_month',
+      day: null,
+      name: 'Primer día hábil del mes',
+    },
+    { id: 11, type: 'specific_day_of_month', day: 1, name: 'Día 1 del mes' },
+    { id: 12, type: 'specific_day_of_month', day: 2, name: 'Día 2 del mes' },
+    { id: 13, type: 'specific_day_of_month', day: 3, name: 'Día 3 del mes' },
+    { id: 14, type: 'specific_day_of_month', day: 4, name: 'Día 4 del mes' },
+    { id: 15, type: 'specific_day_of_month', day: 5, name: 'Día 5 del mes' },
+    { id: 16, type: 'specific_day_of_month', day: 6, name: 'Día 6 del mes' },
+    { id: 17, type: 'specific_day_of_month', day: 7, name: 'Día 7 del mes' },
+    { id: 18, type: 'specific_day_of_month', day: 8, name: 'Día 8 del mes' },
+    { id: 19, type: 'specific_day_of_month', day: 9, name: 'Día 9 del mes' },
+    { id: 20, type: 'specific_day_of_month', day: 10, name: 'Día 10 del mes' },
+    { id: 21, type: 'specific_day_of_month', day: 11, name: 'Día 11 del mes' },
+    { id: 22, type: 'specific_day_of_month', day: 12, name: 'Día 12 del mes' },
+    { id: 23, type: 'specific_day_of_month', day: 13, name: 'Día 13 del mes' },
+    { id: 24, type: 'specific_day_of_month', day: 14, name: 'Día 14 del mes' },
+    { id: 25, type: 'specific_day_of_month', day: 15, name: 'Día 15 del mes' },
+    { id: 26, type: 'specific_day_of_month', day: 16, name: 'Día 16 del mes' },
+    { id: 27, type: 'specific_day_of_month', day: 17, name: 'Día 17 del mes' },
+    { id: 28, type: 'specific_day_of_month', day: 18, name: 'Día 18 del mes' },
+    { id: 29, type: 'specific_day_of_month', day: 19, name: 'Día 19 del mes' },
+    { id: 30, type: 'specific_day_of_month', day: 20, name: 'Día 20 del mes' },
+    { id: 31, type: 'specific_day_of_month', day: 21, name: 'Día 21 del mes' },
+    { id: 32, type: 'specific_day_of_month', day: 22, name: 'Día 22 del mes' },
+    { id: 33, type: 'specific_day_of_month', day: 23, name: 'Día 23 del mes' },
+    { id: 34, type: 'specific_day_of_month', day: 24, name: 'Día 24 del mes' },
+    { id: 35, type: 'specific_day_of_month', day: 25, name: 'Día 25 del mes' },
+    { id: 36, type: 'specific_day_of_month', day: 26, name: 'Día 26 del mes' },
+    { id: 37, type: 'specific_day_of_month', day: 27, name: 'Día 27 del mes' },
+    { id: 38, type: 'specific_day_of_month', day: 28, name: 'Día 28 del mes' },
+  ];
+}
